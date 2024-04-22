@@ -341,6 +341,18 @@ runs:
         fi
         df -h
 
+    - name: Upload artefacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-artefacts-linux${{ env.CI_DEPLOY_PLATFORM }}
+        path: /home/runner/.m2/repository
+
+    - name: Upload artefacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-javacpp-presets-linux${{ env.CI_DEPLOY_PLATFORM }}
+        path: ${{github.workspace}}
+
     - name: Clean up
       shell: bash
       run: |

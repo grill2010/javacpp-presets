@@ -319,6 +319,18 @@ runs:
         df -h
         wmic pagefile list /format:list
 
+    - name: Upload artefacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-artefacts-windows${{ env.CI_DEPLOY_PLATFORM }}
+        path: C:/Users/runneradmin/.m2/repository
+
+    - name: Upload artefacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-javacpp-presets-windows${{ env.CI_DEPLOY_PLATFORM }}
+        path: ${{github.workspace}}
+
     - name: Clean up
       shell: cmd
       run: |
