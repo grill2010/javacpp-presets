@@ -10,7 +10,7 @@ fi
 DISABLE="--disable-iconv --disable-opencl --disable-sdl2 --disable-bzlib --disable-lzma --disable-linux-perf --disable-xlib"
 ENABLE="--enable-shared --enable-version3 --enable-runtime-cpudetect --enable-zlib --enable-libmp3lame --enable-libspeex --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libvo-amrwbenc --enable-openssl --enable-libopenh264 --enable-libvpx --enable-libfreetype --enable-libopus --enable-libxml2 --enable-libsrt --enable-libwebp --enable-libaom --enable-libsvtav1"
 ENABLE_VULKAN="--enable-vulkan --enable-hwaccel=h264_vulkan --enable-hwaccel=hevc_vulkan --enable-hwaccel=av1_vulkan"
-ENABLE_VAAPI="--enable-hwaccel=h264_vaapi --enable-hwaccel=hevc_vaapi"
+ENABLE_VAAPI="--enable-vaapi --enable-hwaccel=h264_vaapi --enable-hwaccel=hevc_vaapi"
 
 if [[ "$EXTENSION" == *gpl ]]; then
     # Enable GPLv3 modules
