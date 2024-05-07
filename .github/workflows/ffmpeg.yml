@@ -24,28 +24,28 @@ jobs:
   #    matrix:
   #      ext: [""]
   #  steps:
-  #    - uses: grill2010/javacpp-presets/.github/actions/deploy-ubuntu@ffmpeg_patch
+  #    - uses: grill2010/javacpp-presets/.github/actions/deploy-ubuntu@enable_vaapi_1.5.10
   linux-x86_64:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         ext: [""]
     steps:
-      - uses: grill2010/javacpp-presets/.github/actions/deploy-ubuntu@ffmpeg_patch
-  windows-x86:
-    runs-on: windows-2019
-    strategy:
-      matrix:
-        ext: [""]
-    steps:
-      - uses: grill2010/javacpp-presets/.github/actions/deploy-windows@ffmpeg_patch
-  windows-x86_64:
-    runs-on: windows-2019
-    strategy:
-      matrix:
-        ext: [""]
-    steps:
-      - uses: grill2010/javacpp-presets/.github/actions/deploy-windows@ffmpeg_patch
+      - uses: grill2010/javacpp-presets/.github/actions/deploy-ubuntu@enable_vaapi_1.5.10
+  #windows-x86:
+  #  runs-on: windows-2019
+  #  strategy:
+  #    matrix:
+  #      ext: [""]
+  #  steps:
+  #    - uses: grill2010/javacpp-presets/.github/actions/deploy-windows@ffmpeg_patch
+  #windows-x86_64:
+  #  runs-on: windows-2019
+  #  strategy:
+  #    matrix:
+  #      ext: [""]
+  #  steps:
+  #    - uses: grill2010/javacpp-presets/.github/actions/deploy-windows@ffmpeg_patch
   #redeploy:
   #  needs: [linux-x86_64, windows-x86_64]
   #  runs-on: ubuntu-20.04
