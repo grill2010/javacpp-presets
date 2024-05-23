@@ -143,14 +143,14 @@ runs:
           #$SUDO apt-get install -y va-driver-all
           
           # Cloning and building libva (Intel's Video Acceleration API implementation)
-          #git clone https://github.com/intel/libva.git
-          #cd libva
-          #git checkout master  # Specify a tag or commit for a specific version if needed
-          #./autogen.sh
-          #./configure --prefix=/usr
-          #make -j$(nproc)
-          #$SUDO make install
-          #cd ..
+          git clone https://github.com/intel/libva.git
+          cd libva
+          git checkout master  # Specify a tag or commit for a specific version if needed
+          ./autogen.sh
+          ./configure --prefix=/usr
+          make -j$(nproc)
+          $SUDO make install
+          cd ..
         fi
 
         if [[ -n ${USERLAND_BUILDME:-} ]]; then
