@@ -137,7 +137,7 @@ runs:
           $SUDO apt-get install -y autoconf libtool build-essential libdrm-dev libgl1-mesa-dev
           
           # Install VAAPI driver development packages for Intel, AMD and potentially NVIDIA
-          $SUDO apt-get install -y libva-dev libva-drm2 libva-x11-2 libva-glx2 libva-wayland2 libva2 libwayland-dev
+          #$SUDO apt-get install -y libva-dev libva-drm2 libva-x11-2 libva-glx2 libva-wayland2 libva2 libwayland-dev
           
           # Additional drivers for different hardware
           #$SUDO apt-get install -y va-driver-all
