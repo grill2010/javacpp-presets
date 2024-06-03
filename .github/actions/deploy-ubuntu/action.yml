@@ -141,8 +141,8 @@ runs:
           # Install VAAPI driver development packages for Intel, AMD, and Nvidia
           $SUDO apt-get install -y libva-dev libva-drm2 libva-x11-2 libva-glx2 libva-wayland2 libva2 libwayland-dev
           
-          # Install all available VA-API drivers and additional specific drivers
-          $SUDO apt-get install -y va-driver-all intel-media-va-driver vdpau-va-driver libva-intel-driver libva-intel-hybrid-driver
+          # Install all available VA-API drivers
+          $SUDO apt-get install -y va-driver-all intel-media-va-driver mesa-va-drivers
           
           # Cloning and building libva (Intel's Video Acceleration API implementation)
           git clone https://github.com/intel/libva.git
@@ -153,10 +153,6 @@ runs:
           make -j$(nproc)
           $SUDO make install
           cd ..
-          
-          # Verify installation
-          echo Checking vainfo
-          vainfo || { echo "VA-API is not working. Falling back to software decoding."; }
         fi
 
         if [[ -n ${USERLAND_BUILDME:-} ]]; then
