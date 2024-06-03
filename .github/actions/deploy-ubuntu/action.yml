@@ -138,11 +138,11 @@ runs:
           # Install common build tools and libraries
           $SUDO apt-get install -y autoconf libtool build-essential libdrm-dev libgl1-mesa-dev
           
-          # Install VAAPI driver development packages for Intel, AMD and potentially NVIDIA
+          # Install VAAPI driver development packages for Intel, AMD, and Nvidia
           $SUDO apt-get install -y libva-dev libva-drm2 libva-x11-2 libva-glx2 libva-wayland2 libva2 libwayland-dev
           
-          # Additional drivers for different hardware
-          $SUDO apt-get install -y va-driver-all
+          # Install all available VA-API drivers
+          $SUDO apt-get install -y va-driver-all intel-media-va-driver vdpau-va-driver
           
           # Cloning and building libva (Intel's Video Acceleration API implementation)
           git clone https://github.com/intel/libva.git
