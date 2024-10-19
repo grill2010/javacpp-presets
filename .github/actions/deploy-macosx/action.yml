@@ -152,6 +152,12 @@ runs:
         fi
         df -h
 
+    - name: Upload artefacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: maven-artefacts-macos${{ env.CI_DEPLOY_PLATFORM }}
+        path: /home/runner/.m2/repository
+
     - name: Clean up
       shell: bash
       run: |
