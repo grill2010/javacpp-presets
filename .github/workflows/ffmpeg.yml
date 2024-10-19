@@ -18,13 +18,27 @@ env:
   CI_DEPLOY_PASSWORD: ${{ secrets.CI_DEPLOY_PASSWORD }}
   STAGING_REPOSITORY: ${{ secrets.STAGING_REPOSITORY }}
 jobs:
-  linux-x86_64:
-    runs-on: ubuntu-22.04
+  #linux-x86_64:
+  #  runs-on: ubuntu-22.04
+  #  strategy:
+  #    matrix:
+  #      ext: [""]
+  #  steps:
+  #    - uses: grill2010/javacpp-presets/.github/actions/deploy-ubuntu@enable_vaapi_1.5.10
+  macosx-arm64:
+    runs-on: macos-11
     strategy:
       matrix:
         ext: [""]
     steps:
-      - uses: grill2010/javacpp-presets/.github/actions/deploy-ubuntu@enable_vaapi_1.5.10
+      - uses: grill2010/javacpp-presets/.github/actions/deploy-macosx@enable_vaapi_1.5.10
+  macosx-x86_64:
+    runs-on: macos-11
+    strategy:
+      matrix:
+        ext: [""]
+    steps:
+      - uses: grill2010/javacpp-presets/.github/actions/deploy-macosx@enable_vaapi_1.5.10
   #windows-x86:
   #  runs-on: windows-2019
   #  strategy:
